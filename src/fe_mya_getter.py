@@ -14,7 +14,8 @@ import io
 from tqdm import tqdm
 
 app_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
+app_name = "fe_mya_getter"
+version = "1.0"
 
 def get_data_log(file: str) -> pd.DataFrame:
     """Read in the data log file and return it as a DataFrame"""
@@ -182,6 +183,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Query archiver data collected during fe_daq use based on fe_daq data'
                                                  'index files, i.e. gradient-scan.csv')
+    parser.add_argument('-v', '--version', action='version', version=f"{app_name} v{version}")
     parser.add_argument('-i', '--input-file', required=True, type=str,
                         help="Location of the input file to process.  I suggest keeping them in the data/ directory.")
     parser.add_argument('-o', '--output-file', type=str,
