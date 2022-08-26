@@ -1,3 +1,11 @@
+# Application data and log directories
+data/
+out/
+log/
+
+# IDE stuff
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
